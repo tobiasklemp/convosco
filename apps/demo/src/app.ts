@@ -1,8 +1,6 @@
-import { setupBraintreeAppDeligate } from '@convosco/nativescript-braintree';
+import { setupBraintree } from '@convosco/nativescript-braintree';
 import { Application } from '@nativescript/core';
 
-if (Application.ios) {
-    setupBraintreeAppDeligate("org.nativescript.demo.payments");
-}
+setupBraintree('org.nativescript.plugindemo.payments');
 
 Application.run({ moduleName: 'app-root' });

@@ -2,12 +2,8 @@ import { Observable } from '@nativescript/core';
 import { BraintreeAddress } from './common';
 
 //handle appswitch when other plugins already implement a custom appdelegate
-export declare function setupBraintreeAppDeligate(urlScheme: any): void;
-export declare function overrideFunction(classRef, methodName, nextImplementation): any;
+export declare function setupBraintree(urlScheme: string): void;
 
-export declare function setUrlScheme(urlScheme): void;
-
-export declare function handleReturnUrl(url, sourceApplication): void
 
 export declare enum SupportedAPCards {
   AmEx = "AmEx",

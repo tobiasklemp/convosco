@@ -72,12 +72,8 @@ class DataCollector {
 }
 
 
-export function setupBraintreeAppDeligate(urlScheme: any) {
+export function setupBraintree(urlScheme: string) {
     // to avoid error
-}
-
-export function overrideFunction(classRef, methodName, nextImplementation) {
-
 }
 
 /**

@@ -1,6 +1,6 @@
 import { BrainTreeOptions, IPayPalAccountNonce, IPaymentMethodNonce, ApplePayLineItem, SupportedAPCards } from '.';
 import { BraintreeBase, BraintreeAddress, checkRequirements } from './common';
-import { setupAppDeligate, enableMultipleOverridesFor } from "./getappdelegate"
+import { setupAppDelegate, enableMultipleOverridesFor, getAppDelegate } from "./getappdelegate"
 //declare const BTDropInRequest, BTDropInController, UIApplication, PPDataCollector, BTPostalAddress;
 
 /**
@@ -52,7 +52,7 @@ class PayPalAccountNonce implements IPayPalAccountNonce {
 /**
  * Basic Paymentmethodnonce object
  */
-class PaymentMethodNonce implements IPaymentMethodNonce {
+class PaymentMethodNonce implements IPaymentMethodNonce { 
 
     description: string;
     nonce: string;
@@ -69,21 +69,8 @@ class PaymentMethodNonce implements IPaymentMethodNonce {
  * Setup appswitch
  * @param urlScheme 
  */
-export function setupBraintreeAppDeligate(urlScheme) {
-    setupAppDeligate(urlScheme);
-}
-
-export function overrideFunction(classRef, methodName, nextImplementation) {
-    return enableMultipleOverridesFor(classRef, methodName, nextImplementation);
-}
-
-
-export function setUrlScheme(urlScheme) {
-    BTAppSwitch.setReturnURLScheme(urlScheme);
-}
-
-export function handleReturnUrl(url, sourceApplication) {
-    BTAppSwitch.handleOpenURLSourceApplication(url, sourceApplication);
+export function setupBraintree(urlScheme: string) {
+    setupAppDelegate(urlScheme);
 }
 
 /**
@@ -649,7 +636,7 @@ export class Braintree extends BraintreeBase {
 /**
  * Delegate for local payments
  */
-@NativeClass()
+@NativeClass
 export class LocalPaymentRequestDelegate extends NSObject implements BTLocalPaymentRequestDelegate {
     public static ObjCProtocols = [BTLocalPaymentRequestDelegate];
     
@@ -662,7 +649,7 @@ export class LocalPaymentRequestDelegate extends NSObject implements BTLocalPaym
 /**
  * Delegate for CreditCard payments with 3DSecure
  */
-@NativeClass()
+@NativeClass
 export class ThreeDSecureRequestDelegate extends NSObject implements BTThreeDSecureRequestDelegate {
     public static ObjCProtocols = [BTThreeDSecureRequestDelegate];
 
@@ -674,7 +661,7 @@ export class ThreeDSecureRequestDelegate extends NSObject implements BTThreeDSec
 /**
  * presenting credit card form. 
  */
-@NativeClass()
+@NativeClass
 export class ViewControllerPresentingDelegate extends NSObject implements BTViewControllerPresentingDelegate {
     public static ObjCProtocols = [BTViewControllerPresentingDelegate];
 
@@ -691,7 +678,7 @@ export class ViewControllerPresentingDelegate extends NSObject implements BTView
 /**
  * Apple Pay view controller
  */
-@NativeClass()
+@NativeClass
 export class PKPaymentAuthorizationViewControllerDelegateImpl extends NSObject implements PKPaymentAuthorizationViewControllerDelegate {
     public static ObjCProtocols = [PKPaymentAuthorizationViewControllerDelegate];
     applePayClient: BTApplePayClient;

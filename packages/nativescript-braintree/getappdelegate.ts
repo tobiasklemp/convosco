@@ -17,20 +17,20 @@ declare const BTAppSwitch;
  * https://github.com/EddyVerbruggen/nativescript-plugin-firebase/blob/78f60f55be30b022690722006e1080b1685548fa/src/firebase.ios.ts#L469
  */
 
+@NativeClass()
+class UIApplicationDelegateImpl extends UIResponder implements UIApplicationDelegate {
+    public static ObjCProtocols = [UIApplicationDelegate];
+
+    static new(): UIApplicationDelegateImpl {
+        return <UIApplicationDelegateImpl>super.new();
+    }
+}
+
 export function getAppDelegate() {
     // Play nice with other plugins by not completely ignoring anything already added to the appdelegate
     if (application.ios.delegate === undefined) {
-        class UIApplicationDelegateImpl extends UIResponder implements UIApplicationDelegate {
-            public static ObjCProtocols = [UIApplicationDelegate];
-
-            static new(): UIApplicationDelegateImpl {
-                return <UIApplicationDelegateImpl>super.new();
-            }
-        }
-
-        application.ios.delegate = UIApplicationDelegateImpl;
+        application.ios.delegate = UIApplicationDelegateImpl; 
     }
-
     return application.ios.delegate;
 }
 
@@ -49,8 +49,7 @@ export function enableMultipleOverridesFor(classRef, methodName, nextImplementat
     };
 }
 
-export function setupAppDeligate(urlScheme) {
-
+export function setupAppDelegate(urlScheme) {
     let appDelegate = getAppDelegate();
 
     enableMultipleOverridesFor(appDelegate, 'applicationDidFinishLaunchingWithOptions', function (application, launchOptions) {
@@ -62,7 +61,6 @@ export function setupAppDeligate(urlScheme) {
         }
         return false;
     });
-
     enableMultipleOverridesFor(appDelegate, 'applicationOpenURLSourceApplicationAnnotation', function (application, url, sourceApplication, annotation) {
         try {
             if (url.scheme === urlScheme) {
