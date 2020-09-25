@@ -1,0 +1,11 @@
+pod 'BraintreeDropIn', '7.4.0'
+pod 'Braintree/Apple-Pay'
+pod 'Braintree/PayPal'
+pod 'Braintree/Venmo'
+pod 'Braintree/PaymentFlow'
+pod 'CardIO'
+post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings[‘EXCLUDED_ARCHS[sdk=iphonesimulator*]’] = ‘arm64’
+    end
+  end

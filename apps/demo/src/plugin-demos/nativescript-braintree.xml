@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="nativescript-braintree" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ScrollView class="h-full">
+          <StackLayout>
+            <ScrollView>
+              <StackLayout class="p-20">
+                <Button tap="{{brainTreePayment}}" text="DropIn" class="btn btn-primary"/>
+                <Button tap="{{paypal}}" text="PayPal Checkout" class="btn btn-primary"/>
+                <Button tap="{{paypalVault}}" text="PayPal Vault" class="btn btn-primary"/>
+                <Button tap="{{localPayment}}" text="Local" class="btn btn-primary"/>
+                <Button tap="{{creditCard}}" text="credit" class="btn btn-primary"/>
+                <Button tap="{{native}}" text="{{nativeText}}" class="btn btn-primary"/>
+                <Button tap="{{data}}" text="DeviceData" class="btn btn-primary"/>
+              </StackLayout>
+            </ScrollView>
+          </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>
