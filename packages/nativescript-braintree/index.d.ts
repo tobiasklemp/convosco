@@ -3,6 +3,7 @@ import { BraintreeAddress } from './common';
 
 //handle appswitch when other plugins already implement a custom appdelegate
 export declare function setupBraintree(urlScheme: string): void;
+export declare function overrideFunction(classRef, methodName, nextImplementation): void;
 
 
 export declare enum SupportedAPCards {

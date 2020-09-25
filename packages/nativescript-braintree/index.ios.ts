@@ -74,6 +74,14 @@ export function setupBraintree(urlScheme: string) {
 }
 
 /**
+ * Setup appswitch
+ * @param urlScheme 
+ */
+export function overrideFunction(classRef, methodName, nextImplementation) {
+    enableMultipleOverridesFor(classRef, methodName, nextImplementation)
+}
+
+/**
  * Convert JS address to BTAddress
  * @param a JS address to be converted
  */
