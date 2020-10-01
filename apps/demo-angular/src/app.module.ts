@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home.component';
 
+import { registerElement } from '@nativescript/angular';
+import { ShadowedLabel } from '@convosco/nativescript-shadowed-label';
+registerElement('ShadowedLabel', () => ShadowedLabel);
+
 @NgModule({
 	schemas: [NO_ERRORS_SCHEMA],
 	declarations: [AppComponent, HomeComponent],

@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:shadowedLabel="@convosco/nativescript-shadowed-label" navigatingTo="navigatingTo" class="page">
+  <Page.actionBar>
+      <ActionBar title="nativescript-shadowed-label" icon="" class="action-bar">
+      </ActionBar>
+  </Page.actionBar>
+  <StackLayout class="p-20">
+      <ScrollView class="h-full">
+        <StackLayout>
+          <shadowedLabel:ShadowedLabel
+            class="h1 text-center"
+            text="title with CSS shadow"
+          />
+          <shadowedLabel:ShadowedLabel
+            text="color shadow"
+            textShadow="2 10 4 rgb(255, 100, 100)"
+            fontStyle="italic"
+            fontSize="40"
+            class="m-b-20 text-center"
+          />
+          <shadowedLabel:ShadowedLabel
+            class="m-t-20 c-black"
+            style="text-shadow: 1 1 1 #55a"
+            textWrap="true"
+            text="Shadow in 'style'!"
+          />
+        
+        </StackLayout>
+      </ScrollView>
+  </StackLayout>
+</Page>

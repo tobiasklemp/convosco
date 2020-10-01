@@ -25,6 +25,12 @@
 		},
 		"nativescript-braintree": {
 			"tags": []
+		},
+		"nativescript-shadowed-label": {
+			"tags": []
+		},
+		"nativescript-urlhandler": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {

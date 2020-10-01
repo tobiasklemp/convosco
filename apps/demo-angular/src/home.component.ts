@@ -9,5 +9,11 @@ export class HomeComponent {
 		{
 			name: 'nativescript-braintree',
 		},
+		{
+			name: 'nativescript-shadowed-label',
+		},
+		{
+			name: 'nativescript-urlhandler',
+		},
 	];
 }

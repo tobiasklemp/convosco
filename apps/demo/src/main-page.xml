@@ -7,6 +7,8 @@
       <StackLayout>
         
         <Button text="nativescript-braintree" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+<Button text="nativescript-shadowed-label" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+<Button text="nativescript-urlhandler" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
       </StackLayout>
     </ScrollView>
   </StackLayout>

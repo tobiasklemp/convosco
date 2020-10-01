@@ -73,7 +73,7 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": ["nx run nativescript-braintree:build.all"],
+						"commands": ["nx run nativescript-braintree:build.all", "nx run nativescript-shadowed-label:build.all", "nx run nativescript-urlhandler:build.all"],
 						"parallel": false
 					}
 				},
@@ -125,6 +125,92 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-braintree"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-shadowed-label": {
+			"root": "packages/nativescript-shadowed-label",
+			"sourceRoot": "packages/nativescript-shadowed-label",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-shadowed-label",
+						"tsConfig": "packages/nativescript-shadowed-label/tsconfig.json",
+						"packageJson": "packages/nativescript-shadowed-label/package.json",
+						"main": "packages/nativescript-shadowed-label/index.ts",
+						"assets": [
+							"packages/nativescript-shadowed-label/*.md",
+							"packages/nativescript-shadowed-label/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-shadowed-label/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-shadowed-label:build", "node tools/scripts/build-finish.ts nativescript-shadowed-label"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-shadowed-label"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-urlhandler": {
+			"root": "packages/nativescript-urlhandler",
+			"sourceRoot": "packages/nativescript-urlhandler",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-urlhandler",
+						"tsConfig": "packages/nativescript-urlhandler/tsconfig.json",
+						"packageJson": "packages/nativescript-urlhandler/package.json",
+						"main": "packages/nativescript-urlhandler/index.ts",
+						"assets": [
+							"packages/nativescript-urlhandler/*.md",
+							"packages/nativescript-urlhandler/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-urlhandler/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-urlhandler:build", "node tools/scripts/build-finish.ts nativescript-urlhandler"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-urlhandler"],
 						"parallel": false
 					}
 				}

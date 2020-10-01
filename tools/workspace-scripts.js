@@ -70,6 +70,20 @@ module.exports = {
 					description: '@convosco/nativescript-braintree: Build',
 				},
 			},
+			// @convosco/nativescript-shadowed-label
+			'nativescript-shadowed-label': {
+				build: {
+					script: 'nx run nativescript-shadowed-label:build.all',
+					description: '@convosco/nativescript-shadowed-label: Build',
+				},
+			},
+			// @convosco/nativescript-urlhandler
+			'nativescript-urlhandler': {
+				build: {
+					script: 'nx run nativescript-urlhandler:build.all',
+					description: '@convosco/nativescript-urlhandler: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -83,6 +97,14 @@ module.exports = {
 			'nativescript-braintree': {
 				script: 'nx run nativescript-braintree:focus',
 				description: 'Focus on @convosco/nativescript-braintree',
+			},
+			'nativescript-shadowed-label': {
+				script: 'nx run nativescript-shadowed-label:focus',
+				description: 'Focus on @convosco/nativescript-shadowed-label',
+			},
+			'nativescript-urlhandler': {
+				script: 'nx run nativescript-urlhandler:focus',
+				description: 'Focus on @convosco/nativescript-urlhandler',
 			},
 			reset: {
 				script: 'nx run all:focus',

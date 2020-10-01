@@ -15,11 +15,13 @@
 		"reflect-metadata": "file:../../node_modules/reflect-metadata",
 		"rxjs": "file:../../node_modules/rxjs",
 		"zone.js": "file:../../node_modules/zone.js",
-		"@convosco/nativescript-braintree": "file:../../dist/packages/nativescript-braintree"
+		"@convosco/nativescript-braintree": "file:../../dist/packages/nativescript-braintree",
+		"@convosco/nativescript-shadowed-label": "file:../../dist/packages/nativescript-shadowed-label",
+		"@convosco/nativescript-urlhandler": "file:../../dist/packages/nativescript-urlhandler"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
-		"@nativescript/android": "~7.0.0",
+		"@nativescript/android": "7.0.0",
 		"@nativescript/ios": "7.0.0",
 		"@nativescript/webpack": "~3.0.0",
 		"@ngtools/webpack": "file:../../node_modules/@ngtools/webpack",
