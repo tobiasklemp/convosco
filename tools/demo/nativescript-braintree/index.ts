@@ -43,7 +43,7 @@ export class DemoSharedNativescriptBraintree extends DemoSharedBase {
             // If doing ApplePay
             let applePayLineItems = this.getApplePayLineItemsSummary();
 
-            let applePayPaymentRequestObj = this.getApplePayPaymentRequestObj(applePayLineItems);
+            let applePayPaymentRequestObj// = this.getApplePayPaymentRequestObj(applePayLineItems);
             opts.applePayPaymentRequest = applePayPaymentRequestObj;
         }
 
@@ -154,11 +154,13 @@ export class DemoSharedNativescriptBraintree extends DemoSharedBase {
     }
 
     native() {
-        let options: BrainTreeOptions = { amount: "0" }
+        let options: BrainTreeOptions = { amount: "1.5" }
+        options.currencyCode = "EUR"
+        options.countryCode = "DE"
 
         if (applicationModule.ios) {
             let applePayLineItems = this.getApplePayLineItemsSummary();
-            let applePayPaymentRequestObj = this.getApplePayPaymentRequestObj(applePayLineItems);
+            //let applePayPaymentRequestObj = this.getApplePayPaymentRequestObj(applePayLineItems);
 
             options.lineItems = [
                 {
@@ -170,11 +172,11 @@ export class DemoSharedNativescriptBraintree extends DemoSharedBase {
                     amount: "30"
                 }
             ]
-            options.applePayPaymentRequest = applePayPaymentRequestObj;
+            //options.applePayPaymentRequest = applePayPaymentRequestObj;
             this.braintree.startApplePayPayment(options).then(res => {
                 console.log("success", res);
             }, err => {
-                console.log("Apple Pay error: ", err.error);
+                console.log("Apple Pay error: ", err);
             })
         }
         else {
@@ -189,36 +191,36 @@ export class DemoSharedNativescriptBraintree extends DemoSharedBase {
         }
     }
 
-    getApplePayPaymentRequestObj(applePayLineItems: Array<any>): PKPaymentRequest {
+    // getApplePayPaymentRequestObj(applePayLineItems: Array<any>): PKPaymentRequest {
 
-        let applePayPaymentRequestObj = PKPaymentRequest.alloc().init();
+    //     let applePayPaymentRequestObj = PKPaymentRequest.alloc().init();
 
-        let lineItemsArray = [];
+    //     let lineItemsArray = [];
 
-        applePayLineItems.map((lineItem: any) => {
-            let pkSummaryItem = PKPaymentSummaryItem.summaryItemWithLabelAmount(lineItem.label, NSDecimalNumber.decimalNumberWithString(lineItem.amount.toString()));
-            lineItemsArray.push(pkSummaryItem);
-        });
+    //     applePayLineItems.map((lineItem: any) => {
+    //         let pkSummaryItem = PKPaymentSummaryItem.summaryItemWithLabelAmount(lineItem.label, NSDecimalNumber.decimalNumberWithString(lineItem.amount.toString()));
+    //         lineItemsArray.push(pkSummaryItem);
+    //     });
 
-        let paymentSummaryArray = NSArray.alloc().initWithArray(lineItemsArray);
+    //     let paymentSummaryArray = NSArray.alloc().initWithArray(lineItemsArray);
 
-        applePayPaymentRequestObj.paymentSummaryItems = paymentSummaryArray as NSArray<PKPaymentSummaryItem>;
-        applePayPaymentRequestObj.countryCode = "US";
-        applePayPaymentRequestObj.currencyCode = "USD";
-        applePayPaymentRequestObj.merchantIdentifier = "YOUR_MERCHANT_IDENTIFIER";
-        applePayPaymentRequestObj.merchantCapabilities = PKMerchantCapability.Capability3DS;
+    //     applePayPaymentRequestObj.paymentSummaryItems = paymentSummaryArray as NSArray<PKPaymentSummaryItem>;
+    //     applePayPaymentRequestObj.countryCode = "US";
+    //     applePayPaymentRequestObj.currencyCode = "USD";
+    //     applePayPaymentRequestObj.merchantIdentifier = "YOUR_MERCHANT_IDENTIFIER";
+    //     applePayPaymentRequestObj.merchantCapabilities = PKMerchantCapability.Capability3DS;
 
-        let networksArray = NSArray.alloc().initWithArray([
-            "AmEx",
-            "Discover",
-            "MasterCard",
-            "Visa",
-        ]);
+    //     let networksArray = NSArray.alloc().initWithArray([
+    //         "AmEx",
+    //         "Discover",
+    //         "MasterCard",
+    //         "Visa",
+    //     ]);
 
-        applePayPaymentRequestObj.supportedNetworks = networksArray as NSArray<string>;
+    //     applePayPaymentRequestObj.supportedNetworks = networksArray as NSArray<string>;
 
-        return applePayPaymentRequestObj;
-    }
+    //     return applePayPaymentRequestObj;
+    // }
 
     getApplePayLineItemsSummary(): Array<any> {
         return [
