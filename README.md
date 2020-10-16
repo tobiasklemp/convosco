@@ -6,6 +6,7 @@ npm start
 ```
 
 - @convosco/nativescript-braintree
+- @convosco/nativescript-open-default-app
 - @convosco/nativescript-shadowed-label
 - @convosco/nativescript-urlhandler
 

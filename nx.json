@@ -31,6 +31,9 @@
 		},
 		"nativescript-urlhandler": {
 			"tags": []
+		},
+		"nativescript-open-default-app": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {

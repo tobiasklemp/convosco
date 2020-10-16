@@ -84,6 +84,13 @@ module.exports = {
 					description: '@convosco/nativescript-urlhandler: Build',
 				},
 			},
+			// @convosco/nativescript-open-default-app
+			'nativescript-open-default-app': {
+				build: {
+					script: 'nx run nativescript-open-default-app:build.all',
+					description: '@convosco/nativescript-open-default-app: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -105,6 +112,10 @@ module.exports = {
 			'nativescript-urlhandler': {
 				script: 'nx run nativescript-urlhandler:focus',
 				description: 'Focus on @convosco/nativescript-urlhandler',
+			},
+			'nativescript-open-default-app': {
+				script: 'nx run nativescript-open-default-app:focus',
+				description: 'Focus on @convosco/nativescript-open-default-app',
 			},
 			reset: {
 				script: 'nx run all:focus',

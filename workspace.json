@@ -73,7 +73,7 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": ["nx run nativescript-braintree:build.all", "nx run nativescript-shadowed-label:build.all", "nx run nativescript-urlhandler:build.all"],
+						"commands": ["nx run nativescript-braintree:build.all", "nx run nativescript-shadowed-label:build.all", "nx run nativescript-urlhandler:build.all", "nx run nativescript-open-default-app:build.all"],
 						"parallel": false
 					}
 				},
@@ -211,6 +211,49 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-urlhandler"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-open-default-app": {
+			"root": "packages/nativescript-open-default-app",
+			"sourceRoot": "packages/nativescript-open-default-app",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-open-default-app",
+						"tsConfig": "packages/nativescript-open-default-app/tsconfig.json",
+						"packageJson": "packages/nativescript-open-default-app/package.json",
+						"main": "packages/nativescript-open-default-app/index.ts",
+						"assets": [
+							"packages/nativescript-open-default-app/*.md",
+							"packages/nativescript-open-default-app/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-open-default-app/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-open-default-app:build", "node tools/scripts/build-finish.ts nativescript-open-default-app"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-open-default-app"],
 						"parallel": false
 					}
 				}

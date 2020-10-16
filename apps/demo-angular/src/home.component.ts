@@ -10,6 +10,9 @@ export class HomeComponent {
 			name: 'nativescript-braintree',
 		},
 		{
+			name: 'nativescript-open-default-app',
+		},
+		{
 			name: 'nativescript-shadowed-label',
 		},
 		{
