@@ -8,7 +8,8 @@
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@convosco/nativescript-braintree": "file:../../packages/nativescript-braintree",
     "@convosco/nativescript-shadowed-label": "file:../../packages/nativescript-shadowed-label",
-    "@convosco/nativescript-urlhandler": "file:../../packages/nativescript-urlhandler"
+    "@convosco/nativescript-urlhandler": "file:../../packages/nativescript-urlhandler",
+	"@convosco/nativescript-open-default-app": "file:../../packages/nativescript-open-default-app"
   },
   "devDependencies": {
     "@nativescript/android": "7.0.0",

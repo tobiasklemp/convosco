@@ -6,14 +6,17 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 	demos = [
-	{
-		name: 'nativescript-braintree'
-	},
-	{
-		name: 'nativescript-shadowed-label'
-	},
-	{
-		name: 'nativescript-urlhandler'
-	}
-];
+		{
+			name: 'nativescript-braintree',
+		},
+		{
+			name: 'nativescript-open-default-app',
+		},
+		{
+			name: 'nativescript-shadowed-label',
+		},
+		{
+			name: 'nativescript-urlhandler',
+		},
+	];
 }

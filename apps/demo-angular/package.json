@@ -17,7 +17,9 @@
     "zone.js": "file:../../node_modules/zone.js",
     "@convosco/nativescript-braintree": "file:../../dist/packages/nativescript-braintree",
     "@convosco/nativescript-shadowed-label": "file:../../dist/packages/nativescript-shadowed-label",
-    "@convosco/nativescript-urlhandler": "file:../../dist/packages/nativescript-urlhandler"
+    "@convosco/nativescript-urlhandler": "file:../../dist/packages/nativescript-urlhandler",
+	"@convosco/nativescript-open-default-app": "file:../../dist/packages/nativescript-open-default-app"
+
   },
   "devDependencies": {
     "@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
